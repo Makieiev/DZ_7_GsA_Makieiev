@@ -1,0 +1,63 @@
+<!-- Реализуйте последний 2 слайда в презентации с помощью пройденого на уроке материала (слайд 1)-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Домашнее задание 7-2 Наследование по JsA Макеев Владимир</title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			font-size: 40px;
+			background-color:  #D3D3D3;
+			color: #2F4F4F
+		}
+	</style>
+	<script type="text/javascript">
+		
+		function Man(name) {
+			this.name = name;
+			this.walk = function () {
+				document.write('I walk ' + "<br/>")
+			}
+			this.eat = function () {
+				document.write('I eat' + "<br/>")
+			}
+			this.drink = function () {
+				document.write('I drink' + '<br/>');
+			}
+			this.showData = function () {
+				document.write('I ' + this.name + ':' + '<br/><br/>');
+			}
+		};
+		function Soldier (name) {
+			this.name = name;
+			this.shoot = function (){
+				document.write('I shoot very accurately' + '<br/>');
+			}
+		};
+		function Doctor (name) {
+			this.name = name;
+			this.cure = function () {
+				document.write('I cure a people' + '<br/>');
+			}
+		};
+
+        Soldier.prototype = new Man();
+		Doctor.prototype = new Man();
+		var doctor = new Doctor("Doctor");
+		doctor.showData();
+		doctor.walk();
+		doctor.eat();	
+		doctor.drink();
+		doctor.cure();
+		document.write('<br/><br/>');
+		var soldier = new Soldier("Soldier");
+		soldier.showData();
+		soldier.walk();
+		soldier.eat();	
+		soldier.drink();
+		soldier.shoot();
+	</script>
+</body>
+</html>

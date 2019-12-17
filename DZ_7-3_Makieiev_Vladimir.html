@@ -1,0 +1,48 @@
+<!-- Реализуйте последний 2 слайда в презентации с помощью пройденого на уроке материала (слайд 2)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание 7-3 Полиморфизм по JsA Макеев Владимир</title>
+    <body>
+	<style type="text/css">
+		body{
+			font-size: 40px;
+			background-color:  #D3D3D3;
+			color:  #808000;
+		}
+	</style>
+    <script>
+        function Doctor() {
+            this.walk = 'Yes it is';
+            this.drink = 'Yes it is';
+            this.eat = 'Yes it is';
+            this.cure = function () {
+                document.write("I cure a people!"+ "<br/>");
+            }
+            this.show = function () {
+                document.write("I walk - " + this.walk +  "<br/>" + "I eat - " + this.eat + "<br/>" + "I drink - " + this.drink + "<br/><br/>");
+            }
+        };
+        function Surgeon() {
+            this.cure = function () {
+                document.write("Perform operations!"+ "<br/><br/>");
+            }
+        };
+        function Dentist() {
+            this.cure = function () {
+                document.write("I can treat!"+ "<br/><br/>");
+            }
+        };
+        Surgeon.prototype = new Doctor();
+        Dentist.prototype = new Doctor();
+        var dentist = new Dentist();
+        var surgeon = new Surgeon();
+        dentist.cure();
+        dentist.show();
+        surgeon.cure();
+        surgeon.show();
+    </script>
+</head>
+</body>
+</html>

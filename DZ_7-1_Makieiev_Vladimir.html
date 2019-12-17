@@ -1,0 +1,22 @@
+<!-- Создайте функцию, которая возвращает день недели для даты. День нужно возвратить в формате - понедельник имеет номер 1, вторник номер 2, …, воскресенье - номер 7. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание 7-1 по JsA Макеев Владимир</title>
+</head>
+<body>
+  <script type="text/javascript">
+    window.addEventListener('load', function(){
+            function nowDay(date){
+                var dateDay = date.getDay();
+                if(dateDay === 0){
+                    dateDay = 7;
+                };
+                return dateDay;
+            };
+            alert('Сегодня ' + '  ' + nowDay(new Date())+''+'- й день недели');
+        });
+  </script>
+</body>
+</html>
